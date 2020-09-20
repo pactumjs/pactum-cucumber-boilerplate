@@ -1,0 +1,24 @@
+{
+  "name": "pactum-cucumber-boilerplate",
+  "version": "1.0.0",
+  "description": "Boilerplate project to run REST API tests with Cucumber &amp; Pactum",
+  "main": "index.js",
+  "scripts": {
+    "test": "cucumber-js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ASaiAnudeep/pactum-cucumber-boilerplate.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ASaiAnudeep/pactum-cucumber-boilerplate/issues"
+  },
+  "homepage": "https://github.com/ASaiAnudeep/pactum-cucumber-boilerplate#readme",
+  "dependencies": {
+    "@cucumber/cucumber": "^7.0.0-rc.0",
+    "pactum": "^2.0.5"
+  }
+}
