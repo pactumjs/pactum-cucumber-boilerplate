@@ -11,26 +11,38 @@ Given('I make a {string} request to {string}', function (method, endpoint) {
   spec[method.toLowerCase()](endpoint);
 });
 
+Given('I set query param {string} to {string}', function (key, value) {
+  spec.withQueryParams(key, value);
+});
+
+Given('I set header {string} to {string}', function (key, value) {
+  spec.withHeaders(key, value);
+});
+
+Given(/I set body to/, function (body) {
+  spec.withBody(body);
+});
+
 When('I receive a response', async function () {
   await spec.toss();
 });
 
-Then('response should have a status {int}', function (code) {
-  spec.response().to.have.status(200);
+Then('I expect response should have a status {int}', function (code) {
+  spec.response().should.have.status(code);
 });
 
-Then(/^response should have a json$/, function (json) {
-  spec.response().to.have.json(JSON.parse(json));
+Then(/^I expect response should have a json$/, function (json) {
+  spec.response().should.have.json(JSON.parse(json));
 });
 
-Then(/^response should have a json like$/, function (json) {
-  spec.response().to.have.jsonLike(JSON.parse(json));
+Then(/^I expect response should have a json like$/, function (json) {
+  spec.response().should.have.jsonLike(JSON.parse(json));
 });
 
-Then(/^response should have a json schema$/, function (json) {
-  spec.response().to.have.jsonSchema(JSON.parse(json));
+Then(/^I expect response should have a json schema$/, function (json) {
+  spec.response().should.have.jsonSchema(JSON.parse(json));
 });
 
-Then(/^response should have a body$/, function (body) {
-  spec.response().to.have.body(body);
+Then(/^I expect response should have a body$/, function (body) {
+  spec.response().should.have.body(body);
 });

@@ -6,5 +6,5 @@ Feature: Random User
 
   Scenario: Get One Random User
     Given I make a "GET" request to "https:/randomuser.me/api"
-    When I receive a response
-    Then response should have a status 200
+     When I receive a response
+     Then I expect response should have a status 200
