@@ -2,8 +2,7 @@
 // - Base URL
 // - Headers
 
-const pactum = require('pactum');
-const request = pactum.request;
+const request = require('pactum').request;
 const { Before } = require('@cucumber/cucumber');
 
 Before({ tags: '@Regres' }, () => {

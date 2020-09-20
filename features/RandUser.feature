@@ -8,3 +8,9 @@ Feature: Random User
     Given I make a "GET" request to "https:/randomuser.me/api"
      When I receive a response
      Then I expect response should have a status 200
+  
+  Scenario: Get One Random Male User
+    Given I make a "GET" request to "https:/randomuser.me/api"
+      And I set query param "gender" to "male"
+     When I receive a response
+     Then I expect response should have "valid male user details"

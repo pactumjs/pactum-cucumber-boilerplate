@@ -46,3 +46,7 @@ Then(/^I expect response should have a json schema$/, function (json) {
 Then(/^I expect response should have a body$/, function (body) {
   spec.response().should.have.body(body);
 });
+
+Then('I expect response should have {string}', function (handler) {
+  spec.response().should.have._(handler);
+});
