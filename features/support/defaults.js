@@ -1,10 +1,6 @@
-// Set Default Settings Here
-// - Base URL
-// - Headers
-
-const request = require('pactum').request;
+const { request } = require('pactum');
 const { Before } = require('@cucumber/cucumber');
 
-Before({ tags: '@Regres' }, () => {
+Before(() => {
   request.setBaseUrl('https://reqres.in');
 });

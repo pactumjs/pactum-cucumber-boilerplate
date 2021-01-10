@@ -1,4 +1,3 @@
-@Regres
 Feature: Regres
 
   In order to keep Regres api stable
@@ -6,9 +5,19 @@ Feature: Regres
   I want to make sure that everything works as expected
 
   Scenario: Get A User
-    Given I make a "GET" request to "/api/users/1"
+    Given I make a GET request to /api/users/1
      When I receive a response
      Then I expect response should have a status 200
+      And I expect response should have a json at data
+      """
+      {
+        "id":1,
+        "email":"george.bluth@reqres.in",
+        "first_name":"George",
+        "last_name":"Bluth",
+        "avatar":"https://reqres.in/img/faces/1-image.jpg"
+      }
+      """
       And I expect response should have a json like
       """
       {
@@ -20,8 +29,8 @@ Feature: Regres
       """
 
   Scenario: List Users
-    Given I make a "GET" request to "/api/users"
-      And I set query param "page" to "2"
+    Given I make a GET request to /api/users
+      And I set query param page to 2
      When I receive a response
      Then I expect response should have a status 200
       And I expect response should have a json like
@@ -41,9 +50,24 @@ Feature: Regres
         }
       }
       """
+      And I store response at data[0].id as UserId
+  
+  Scenario: Get A User With Id
+    Given I make a GET request to /api/users/{id}
+      And I set path param id to $S{UserId}
+     When I receive a response
+     Then I expect response should have a status 200
+      And I expect response should have a json like
+      """
+      {
+        "data": {
+          "id": 7
+        }
+      }
+      """
 
   Scenario: Create A User
-    Given I make a "POST" request to "/api/users"
+    Given I make a POST request to /api/users
       And I set body to
       """
       {

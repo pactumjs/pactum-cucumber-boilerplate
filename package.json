@@ -19,6 +19,6 @@
   "homepage": "https://github.com/ASaiAnudeep/pactum-cucumber-boilerplate#readme",
   "dependencies": {
     "@cucumber/cucumber": "^7.0.0-rc.0",
-    "pactum": "^2.0.6"
+    "pactum": "^3.0.4"
   }
 }
