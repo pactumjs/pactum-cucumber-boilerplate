@@ -1,5 +1,5 @@
 const pactum = require('pactum');
-const { Given, When, Then, Before } = require('@cucumber/cucumber');
+const { Given, When, Then, Before, After } = require('@cucumber/cucumber');
 
 let spec = pactum.spec();
 
@@ -19,6 +19,10 @@ Given(/^I set query param (.*) to (.*)$/, function (key, value) {
   spec.withQueryParams(key, value);
 });
 
+Given(/^I set basic authentication credentials (.*) and (.*)$/, function (username, password) {
+  spec.withAuth(username, password);
+});
+
 Given(/^I set header (.*) to (.*)$/, function (key, value) {
   spec.withHeaders(key, value);
 });
@@ -33,6 +37,14 @@ When('I receive a response', async function () {
 
 Then('I expect response should have a status {int}', function (code) {
   spec.response().should.have.status(code);
+});
+
+Then(/^I expect response header (.*) should be (.*)$/, function (key, value) {
+  spec.response().should.have.header(key, value)
+});
+
+Then(/^I expect response header (.*) should have (.*)$/, function (key, value) {
+  spec.response().should.have.headerContains(key, value)
 });
 
 Then(/^I expect response should have a json$/, function (json) {
@@ -69,4 +81,8 @@ Then('I expect response should have {string}', function (handler) {
 
 Then(/^I store response at (.*) as (.*)$/, function (path, name) {
   spec.stores(name, path);
+});
+
+After(() => {
+  spec.end();
 });

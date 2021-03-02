@@ -57,6 +57,7 @@ Feature: Regres
       And I set path param id to $S{UserId}
      When I receive a response
      Then I expect response should have a status 200
+      And I expect response header content-type should have application/json; charset=utf-8
       And I expect response should have a json like
       """
       {
