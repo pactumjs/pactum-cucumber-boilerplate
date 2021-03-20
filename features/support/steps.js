@@ -31,6 +31,14 @@ Given(/I set body to/, function (body) {
   spec.withBody(body);
 });
 
+Given(/^I upload file at (.*)$/, function (filePath) {
+  spec.withFile(filePath);
+});
+
+Given(/^I set multi-part form param (.*) to (.*)$/, function (key, value) {
+  spec.withMultiPartFormData(key, value);
+});
+
 When('I receive a response', async function () {
   await spec.toss();
 });

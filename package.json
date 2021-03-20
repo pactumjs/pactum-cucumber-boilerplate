@@ -8,17 +8,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ASaiAnudeep/pactum-cucumber-boilerplate.git"
+    "url": "git+https://github.com/pactumjs/pactum-cucumber-boilerplate.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ASaiAnudeep/pactum-cucumber-boilerplate/issues"
+    "url": "https://github.com/pactumjs/pactum-cucumber-boilerplate/issues"
   },
-  "homepage": "https://github.com/ASaiAnudeep/pactum-cucumber-boilerplate#readme",
+  "homepage": "https://github.com/pactumjs/pactum-cucumber-boilerplate#readme",
   "dependencies": {
     "@cucumber/cucumber": "^7.0.0",
-    "pactum": "^3.0.6"
+    "pactum": "^3.0.9"
   }
 }

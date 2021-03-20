@@ -34,6 +34,8 @@ npm run test
 
 ## Gherkin Expressions
 
+Sample Step Definitions
+
 ```gherkin
   Given
     I make a (.*) request to (.*)
@@ -42,6 +44,8 @@ npm run test
     I set header (.*) to (.*)
     I set basic authentication credentials (.*) and (.*)
     I set body to
+    I set multipart form data (.*) to (.*)
+    I upload file at (.*)
   
   When
     I receive a response
