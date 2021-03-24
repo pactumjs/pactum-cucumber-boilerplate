@@ -26,7 +26,7 @@ Feature: Regres
       """
 ```
 
-## Sample Test Case
+## Running Tests
 
 ```sh
 npm run test
