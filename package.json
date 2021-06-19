@@ -19,6 +19,6 @@
   "homepage": "https://github.com/pactumjs/pactum-cucumber-boilerplate#readme",
   "dependencies": {
     "@cucumber/cucumber": "^7.0.0",
-    "pactum": "^3.0.12"
+    "pactum": "^3.0.17"
   }
 }

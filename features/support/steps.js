@@ -60,7 +60,7 @@ Then(/^I expect response should have a json$/, function (json) {
 });
 
 Then(/^I expect response should have a json at (.*)$/, function (path, value) {
-  spec.response().should.have.jsonAt(path, JSON.parse(value));
+  spec.response().should.have.json(path, JSON.parse(value));
 });
 
 Then(/^I expect response should have a json like$/, function (json) {
@@ -68,7 +68,7 @@ Then(/^I expect response should have a json like$/, function (json) {
 });
 
 Then(/^I expect response should have a json like at (.*)$/, function (path, value) {
-  spec.response().should.have.jsonLikeAt(path, JSON.parse(value));
+  spec.response().should.have.jsonLike(path, JSON.parse(value));
 });
 
 Then(/^I expect response should have a json schema$/, function (json) {
@@ -76,7 +76,7 @@ Then(/^I expect response should have a json schema$/, function (json) {
 });
 
 Then(/^I expect response should have a json schema at (.*)$/, function (path, value) {
-  spec.response().should.have.jsonSchemaAt(path, JSON.parse(value));
+  spec.response().should.have.jsonSchema(path, JSON.parse(value));
 });
 
 Then(/^I expect response should have a body$/, function (body) {
