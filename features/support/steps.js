@@ -28,7 +28,11 @@ Given(/^I set header (.*) to (.*)$/, function (key, value) {
 });
 
 Given(/I set body to/, function (body) {
-  spec.withBody(JSON.parse(body));
+  try {
+    spec.withJson(JSON.parse(body));
+  } catch(error) {
+    spec.withBody(body);
+  }
 });
 
 Given(/^I upload file at (.*)$/, function (filePath) {
