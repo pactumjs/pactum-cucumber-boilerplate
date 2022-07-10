@@ -42,10 +42,13 @@ Sample Step Definitions
     I set path param (.*) to (.*)
     I set query param (.*) to (.*)
     I set header (.*) to (.*)
+    I set cookie (.*) to (.*)
     I set basic authentication credentials (.*) and (.*)
     I set body to
     I set multipart form data (.*) to (.*)
     I upload file at (.*)
+    I set form-data to
+    I set inspection
   
   When
     I receive a response
@@ -54,6 +57,7 @@ Sample Step Definitions
     I expect response should have a status {int}
     I expect response header (.*) should be (.*)
     I expect response header (.*) should have (.*)
+    I expect response cookie (.*) should be (.*)
     I expect response should have a json
     I expect response should have a json at (.*)
     I expect response should have a json like
@@ -61,6 +65,8 @@ Sample Step Definitions
     I expect response should have a json schema
     I expect response should have a json schema at (.*)
     I expect response should have a body
+    I expect response body should contain (.*)
     I expect response should have {string}
+    I expect response time should be less than {int} ms
     I store response at (.*) as (.*)
 ```

@@ -78,3 +78,4 @@ Feature: Regres
       """
      When I receive a response
      Then I expect response should have a status 201
+     Then I expect response time should be less than 3000 ms

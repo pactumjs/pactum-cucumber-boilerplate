@@ -27,6 +27,10 @@ Given(/^I set header (.*) to (.*)$/, function (key, value) {
   spec.withHeaders(key, value);
 });
 
+Given(/^I set cookie (.*) to (.*)$/, function (key, value) {
+  spec.withCookies(key, value);
+});
+
 Given(/I set body to/, function (body) {
   try {
     spec.withJson(JSON.parse(body));
@@ -43,6 +47,14 @@ Given(/^I set multi-part form param (.*) to (.*)$/, function (key, value) {
   spec.withMultiPartFormData(key, value);
 });
 
+Given(/I set form-data to/, function (form) {
+  spec.withForm(form);
+});
+
+Given(/I set inspection/, function (body) {
+  spec.inspect();
+});
+
 When('I receive a response', async function () {
   await spec.toss();
 });
@@ -52,11 +64,15 @@ Then('I expect response should have a status {int}', function (code) {
 });
 
 Then(/^I expect response header (.*) should be (.*)$/, function (key, value) {
-  spec.response().should.have.header(key, value)
+  spec.response().should.have.header(key, value);
 });
 
 Then(/^I expect response header (.*) should have (.*)$/, function (key, value) {
   spec.response().should.have.headerContains(key, value)
+});
+
+Then(/^I expect response cookie (.*) should be (.*)$/, function (key, value) {
+  spec.response().should.have.cookies(key, value);
 });
 
 Then(/^I expect response should have a json$/, function (json) {
@@ -87,8 +103,16 @@ Then(/^I expect response should have a body$/, function (body) {
   spec.response().should.have.body(body);
 });
 
+Then(/^I expect response body should contain (.*)$/, function (value) {
+  spec.response().should.have.bodyContains(value);
+});
+
 Then('I expect response should have {string}', function (handler) {
   spec.response().should.have._(handler);
+});
+
+Then('I expect response time should be less than {int} ms', function (ms) {
+  spec.response().should.have.responseTimeLessThan(ms)
 });
 
 Then(/^I store response at (.*) as (.*)$/, function (path, name) {
