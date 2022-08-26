@@ -2,6 +2,15 @@
 
 Boilerplate project to run REST API tests with [Cucumber](https://cucumber.io) and [PactumJS](https://pactumjs.github.io)
 
+## Setup
+
+There are 2 options to setup this project:
+- Manually clone this project then install all dependencies
+- Simply using [pusakatest](https://www.npmjs.com/package/pusakatest) CLI tool
+```bash
+npx pusakatest
+```
+
 ## Sample Test Case
 
 ```gherkin
