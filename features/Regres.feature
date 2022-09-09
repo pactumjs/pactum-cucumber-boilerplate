@@ -8,6 +8,7 @@ Feature: Regres
     Given I make a GET request to /api/users/1
      When I receive a response
      Then I expect response should have a status 200
+      And I expect response to match a json snapshot user-1
       And I expect response should have a json at data
       """
       {
