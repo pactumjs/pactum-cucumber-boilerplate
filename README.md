@@ -11,8 +11,9 @@ There are 2 options to setup this project:
 npx pusakatest
 ```
 
-## Sample Test Case
+## Sample Test Cases
 
+### Test Cases 1
 ```gherkin
 Feature: Regres
 
@@ -33,6 +34,22 @@ Feature: Regres
         }
       }
       """
+```
+
+### Test Cases 2
+```gherkin
+Feature: Regres with JsonSnapshot Matching
+
+  In order to keep Regres api stable
+  As a tester
+  I want to make sure that everything works as expected
+  
+  Scenario: Get A User With Id
+    Given I make a GET request to /api/users/{id}
+      And I set path param id to $S{UserId}
+     When I receive a response
+     Then I expect response should have a status 200
+      And I expect response to match a json snapshot userSnapshot
 ```
 
 ## Running Tests
