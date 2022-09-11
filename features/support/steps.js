@@ -59,8 +59,8 @@ When('I receive a response', async function () {
   await spec.toss();
 });
 
-Then(/^I expect response to match a json snapshot (.*)$/, async function (snapshotName) {
-  await spec.name(snapshotName).expectJsonSnapshot()
+Then(/^I expect response to match a json snapshot (.*)$/, async function (name) {
+  spec.response().should.have.jsonSnapshot(name);
 });
 
 Then('I expect response should have a status {int}', function (code) {
