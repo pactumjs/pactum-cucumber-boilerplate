@@ -7,6 +7,9 @@ Boilerplate project to run REST API tests with [Cucumber](https://cucumber.io) a
 There are 2 options to setup this project:
 - Manually clone this project then install all dependencies
 - Simply using [pusakatest](https://www.npmjs.com/package/pusakatest) CLI tool
+  - If you don't have a package.json in your file directory, it will be copied from one of the templates available at [pusakatest](https://github.com/depapp/pusakatest/blob/644409e90fe29f9cdab3b0da3ab9bf497150da79/templates/english/package.json#L20) when you run below command
+  - If you already have a package.json file, add all the dependencies mentioned in [pusakatest](https://github.com/depapp/pusakatest/blob/644409e90fe29f9cdab3b0da3ab9bf497150da79/templates/english/package.json#L20) to your package.json (below command will not override or replace your package.json file)
+  
 ```bash
 npx pusakatest
 ```
