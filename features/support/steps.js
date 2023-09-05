@@ -111,8 +111,8 @@ Then(/^I expect response body should contain (.*)$/, function (value) {
   spec.response().should.have.bodyContains(value);
 });
 
-Then('I expect response should have {string}', function (handler) {
-  spec.response().should.have._(handler);
+Then('I expect response should have {string}', function (value) {
+  spec.response().to.have.body(value);
 });
 
 Then('I expect response time should be less than {int} ms', function (ms) {
